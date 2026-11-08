@@ -220,7 +220,12 @@
     </div>
     <div class="dict-count" id="dictCount"></div>
     <div class="dict-results" id="dictResults"></div>
-    <div class="dict-hint">💡 Escribe en español o inglés. Busca partes de palabras.</div>
+    <div style="text-align:center; margin-top:16px;">
+  <button onclick="searchOnline()" style="font-family:inherit; padding:10px 24px; border-radius:22px; border:none; background:var(--accent2); color:#fff; cursor:pointer; font-size:.95rem;">
+    🔍 Search on WordReference
+  </button>
+</div>
+<div class="dict-hint">💡 Escribe en español o inglés. Busca partes de palabras.</div>
   </section>
 
   <!-- LESSONS -->
@@ -572,6 +577,11 @@ function searchDict(){
       ${conjHtml}
     </div>`;
   }).join('');
+}
+function searchOnline(){
+  const q = $('dictSearch').value.trim();
+  if(!q) return;
+  window.open('https://www.wordreference.com/es/en/translation.asp?spen=' + encodeURIComponent(q), '_blank');
 }
 function speakWord(text){
   speechSynthesis.cancel();
