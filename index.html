@@ -225,7 +225,7 @@
     <div class="dict-count" id="dictCount"></div>
     <div class="dict-results" id="dictResults"></div>
     <div class="dict-online-btn">
-      <button onclick="searchOnline()">🔍 Search on WordReference (Spanish → English)</button>
+      <button onclick="searchOnline()">🔍 Search on SpanishDict (Spanish → English)</button>
     </div>
     <div class="dict-hint">💡 Escribe en español o inglés. Busca partes de palabras.</div>
   </section>
@@ -429,7 +429,7 @@ function speakWord(text){
 function searchOnline(){
   const q = $('dictSearch').value.trim();
   if(!q) return;
-  window.open('https://www.wordreference.com/es/en/translation.asp?spen=' + encodeURIComponent(q), '_blank');
+  window.open('https://www.spanishdict.com/translate/' + encodeURIComponent(q), '_blank');
 }
 
 $('dictSearch').addEventListener('input', searchDict);
