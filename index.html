@@ -52,6 +52,37 @@
   .progress-track{height:10px; background:#e8e1d5; border-radius:6px; overflow:hidden;}
   .progress-fill{height:100%; background:var(--known); width:0%; transition:width .4s;}
   .hint{text-align:center; color:#a89e90; font-size:.85rem; margin-top:10px;}
+  /* Dictionary */
+  .dict-search-box{max-width:600px; margin:0 auto 20px; position:relative;}
+  .dict-search-box input{width:100%; padding:14px 20px; font-family:inherit; font-size:1.05rem; border:2px solid var(--line); border-radius:28px; outline:none; background:var(--card);}
+  .dict-search-box input:focus{border-color:var(--accent2);}
+  .dict-search-box .search-icon{position:absolute; right:18px; top:50%; transform:translateY(-50%); font-size:1.2rem; color:#a89e90;}
+  .dict-filters{display:flex; justify-content:center; gap:8px; margin-bottom:16px; flex-wrap:wrap;}
+  .dict-filters button{font-family:inherit; padding:6px 14px; border-radius:16px; border:1px solid var(--line); background:var(--card); cursor:pointer; font-size:.85rem;}
+  .dict-filters button.active{background:var(--accent2); color:#fff; border-color:var(--accent2);}
+  .dict-results{max-width:700px; margin:0 auto;}
+  .dict-entry{background:var(--card); border:1px solid var(--line); border-radius:12px; padding:16px; margin-bottom:12px;}
+  .dict-entry .word-header{display:flex; justify-content:space-between; align-items:flex-start; gap:10px; margin-bottom:8px; flex-wrap:wrap;}
+  .dict-entry .word{font-size:1.25rem; font-weight:bold; color:var(--ink);}
+  .dict-entry .translation{font-size:1.05rem; color:var(--accent2);}
+  .dict-entry .pos-tag{font-size:.75rem; color:#8a8075; font-style:italic;}
+  .dict-entry .lesson-tag{font-size:.72rem; color:var(--lesson-accent); background:#e8f0e8; padding:2px 8px; border-radius:10px;}
+  .dict-entry .examples{margin-top:10px; padding-top:10px; border-top:1px dashed var(--line);}
+  .dict-entry .ex-item{margin-bottom:6px;}
+  .dict-entry .ex-es{font-style:italic; color:var(--accent2); font-size:.92rem;}
+  .dict-entry .ex-en{color:#6b6157; font-size:.88rem;}
+  .dict-entry .conj-box{margin-top:12px; padding:12px; background:#f0e6f6; border-radius:10px;}
+  .dict-entry .conj-box .conj-title{font-weight:bold; color:#7c4d99; margin-bottom:8px;}
+  .dict-entry .conj-table{width:100%; border-collapse:collapse; font-size:.88rem;}
+  .dict-entry .conj-table th{background:#e8dff0; color:#7c4d99; padding:6px; text-align:left;}
+  .dict-entry .conj-table td{padding:6px; border-bottom:1px solid #d4c4e0;}
+  .dict-entry .speak-btn{background:none; border:none; cursor:pointer; font-size:1.1rem; padding:4px;}
+  .dict-entry .speak-btn:hover{opacity:.7;}
+  .dict-hint{text-align:center; color:#a89e90; font-size:.88rem; margin-top:16px;}
+  .dict-count{text-align:center; color:#6b6157; font-size:.85rem; margin-bottom:12px;}
+  .dict-online-btn{text-align:center; margin-top:16px;}
+  .dict-online-btn button{font-family:inherit; padding:10px 24px; border-radius:22px; border:none; background:var(--accent2); color:#fff; cursor:pointer; font-size:.95rem;}
+  .dict-online-btn button:hover{opacity:.9;}
   /* Lesson Cards */
   .lesson-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:14px; margin-bottom:20px;}
   .lesson-card{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:18px; cursor:pointer; transition:box-shadow .2s;}
@@ -126,34 +157,8 @@
   .dele-card li::before{content:"•"; position:absolute; left:2px; color:var(--accent);}
   footer{text-align:center; color:#a89e90; font-size:.8rem; padding:20px; border-top:1px solid var(--line);}
   @media(max-width:520px){ .face .es{font-size:1.5rem;} .vocab-table{font-size:.85rem;} }
-
-  /* Dictionary */
-  .dict-search-box{max-width:600px; margin:0 auto 20px; position:relative;}
-  .dict-search-box input{width:100%; padding:14px 20px; font-family:inherit; font-size:1.05rem; border:2px solid var(--line); border-radius:28px; outline:none; background:var(--card);}
-  .dict-search-box input:focus{border-color:var(--accent2);}
-  .dict-search-box .search-icon{position:absolute; right:18px; top:50%; transform:translateY(-50%); font-size:1.2rem; color:#a89e90;}
-  .dict-filters{display:flex; justify-content:center; gap:8px; margin-bottom:16px; flex-wrap:wrap;}
-  .dict-filters button{font-family:inherit; padding:6px 14px; border-radius:16px; border:1px solid var(--line); background:var(--card); cursor:pointer; font-size:.85rem;}
-  .dict-filters button.active{background:var(--accent2); color:#fff; border-color:var(--accent2);}
-  .dict-results{max-width:700px; margin:0 auto;}
-  .dict-entry{background:var(--card); border:1px solid var(--line); border-radius:12px; padding:16px; margin-bottom:12px;}
-  .dict-entry .word-header{display:flex; justify-content:space-between; align-items:flex-start; gap:10px; margin-bottom:8px; flex-wrap:wrap;}
-  .dict-entry .word{font-size:1.25rem; font-weight:bold; color:var(--ink);}
-  .dict-entry .translation{font-size:1.05rem; color:var(--accent2);}
-  .dict-entry .pos-tag{font-size:.75rem; color:#8a8075; font-style:italic;}
-  .dict-entry .lesson-tag{font-size:.72rem; color:var(--lesson-accent); background:#e8f0e8; padding:2px 8px; border-radius:10px;}
-  .dict-entry .examples{margin-top:10px; padding-top:10px; border-top:1px dashed var(--line);}
-  .dict-entry .ex-item{margin-bottom:6px;}
-  .dict-entry .ex-es{font-style:italic; color:var(--accent2); font-size:.92rem;}
-  .dict-entry .ex-en{color:#6b6157; font-size:.88rem;}
-  .dict-entry .conj-table{margin-top:10px; width:100%; border-collapse:collapse; font-size:.88rem;}
-  .dict-entry .conj-table th{background:#e8f0e8; color:var(--lesson-accent); padding:6px; text-align:left;}
-  .dict-entry .conj-table td{padding:6px; border-bottom:1px solid var(--line);}
-  .dict-entry .speak-btn{background:none; border:none; cursor:pointer; font-size:1.1rem; padding:4px;}
-  .dict-entry .speak-btn:hover{opacity:.7;}
-  .dict-hint{text-align:center; color:#a89e90; font-size:.88rem; margin-top:16px;}
-  .dict-count{text-align:center; color:#6b6157; font-size:.85rem; margin-bottom:12px;}
 </style>
+<base target="_blank">
 </head>
 <body>
 <header>
@@ -203,7 +208,6 @@
     </div>
   </section>
 
-
   <!-- DICTIONARY -->
   <section id="tab-dict" class="hidden">
     <h2>Diccionario</h2>
@@ -220,12 +224,10 @@
     </div>
     <div class="dict-count" id="dictCount"></div>
     <div class="dict-results" id="dictResults"></div>
-    <div style="text-align:center; margin-top:16px;">
-  <button onclick="searchOnline()" style="font-family:inherit; padding:10px 24px; border-radius:22px; border:none; background:var(--accent2); color:#fff; cursor:pointer; font-size:.95rem;">
-    🔍 Search on WordReference
-  </button>
-</div>
-<div class="dict-hint">💡 Escribe en español o inglés. Busca partes de palabras.</div>
+    <div class="dict-online-btn">
+      <button onclick="searchOnline()">🔍 Search on WordReference (Spanish → English)</button>
+    </div>
+    <div class="dict-hint">💡 Escribe en español o inglés. Busca partes de palabras.</div>
   </section>
 
   <!-- LESSONS -->
@@ -324,6 +326,121 @@ $('btnPrev').onclick=()=>{idx=(idx-1+queue.length)%queue.length; render();};
 $('btnShuffle').onclick=()=>resetQueue(true);
 $('btnKnown').onclick=()=>{const v=queue[idx]; if(v){flashProg[v.es]='known'; saveFlash(); updateProg(); $('card').classList.add('flipped'); setTimeout(()=>{idx=(idx+1)%queue.length; render();},650);}};
 $('btnLearning').onclick=()=>{const v=queue[idx]; if(v){flashProg[v.es]='learning'; saveFlash(); updateProg();}};
+
+/* ---------- Dictionary ---------- */
+let dictFilter='all';
+
+const VERB_CONJUGATIONS = {
+  "ser": {"yo":"soy","tú":"eres","él/ella/usted":"es","nosotros/as":"somos","vosotros/as":"sois","ellos/ellas/ustedes":"son"},
+  "estar": {"yo":"estoy","tú":"estás","él/ella/usted":"está","nosotros/as":"estamos","vosotros/as":"estáis","ellos/ellas/ustedes":"están"},
+  "tener": {"yo":"tengo","tú":"tienes","él/ella/usted":"tiene","nosotros/as":"tenemos","vosotros/as":"tenéis","ellos/ellas/ustedes":"tienen"},
+  "ir": {"yo":"voy","tú":"vas","él/ella/usted":"va","nosotros/as":"vamos","vosotros/as":"vais","ellos/ellas/ustedes":"van"},
+  "hablar": {"yo":"hablo","tú":"hablas","él/ella/usted":"habla","nosotros/as":"hablamos","vosotros/as":"habláis","ellos/ellas/ustedes":"hablan"},
+  "trabajar": {"yo":"trabajo","tú":"trabajas","él/ella/usted":"trabaja","nosotros/as":"trabajamos","vosotros/as":"trabajáis","ellos/ellas/ustedes":"trabajan"},
+  "estudiar": {"yo":"estudio","tú":"estudias","él/ella/usted":"estudia","nosotros/as":"estudiamos","vosotros/as":"estudiáis","ellos/ellas/ustedes":"estudian"},
+  "gustar": {"yo":"me gusta","tú":"te gusta","él/ella/usted":"le gusta","nosotros/as":"nos gusta","vosotros/as":"os gusta","ellos/ellas/ustedes":"les gusta"},
+  "llamarse": {"yo":"me llamo","tú":"te llamas","él/ella/usted":"se llama","nosotros/as":"nos llamamos","vosotros/as":"os llamáis","ellos/ellas/ustedes":"se llaman"},
+  "apellidarse": {"yo":"me apellido","tú":"te apellidas","él/ella/usted":"se apellida","nosotros/as":"nos apellidamos","vosotros/as":"os apellidáis","ellos/ellas/ustedes":"se apellidan"},
+  "entender": {"yo":"entiendo","tú":"entiendes","él/ella/usted":"entiende","nosotros/as":"entendemos","vosotros/as":"entendéis","ellos/ellas/ustedes":"entienden"},
+  "poder": {"yo":"puedo","tú":"puedes","él/ella/usted":"puede","nosotros/as":"podemos","vosotros/as":"podéis","ellos/ellas/ustedes":"pueden"},
+};
+
+function normalizeStr(s){
+  return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+}
+
+function searchDict(){
+  const q = normalizeStr($('dictSearch').value.trim());
+  const results = $('dictResults');
+  if(!q){ results.innerHTML='<div class="dict-hint">Escribe algo para buscar...</div>'; $('dictCount').textContent=''; return; }
+
+  let matches = DICTIONARY.filter(e=>{
+    if(dictFilter!=='all' && e.type!==dictFilter) return false;
+    const es = normalizeStr(e.es);
+    const en = normalizeStr(e.en);
+    return es.includes(q) || en.includes(q) || 
+           es.split(/\s+/).some(w=>w.startsWith(q)) ||
+           en.split(/\s+/).some(w=>w.startsWith(q));
+  });
+
+  matches.sort((a,b)=>{
+    const aEs = normalizeStr(a.es), bEs = normalizeStr(b.es);
+    const aEn = normalizeStr(a.en), bEn = normalizeStr(b.en);
+    const aExact = aEs===q || aEn===q;
+    const bExact = bEs===q || bEn===q;
+    if(aExact && !bExact) return -1;
+    if(!aExact && bExact) return 1;
+    const aStart = aEs.startsWith(q) || aEn.startsWith(q);
+    const bStart = bEs.startsWith(q) || bEn.startsWith(q);
+    if(aStart && !bStart) return -1;
+    if(!aStart && bStart) return 1;
+    return 0;
+  });
+
+  $('dictCount').textContent = matches.length + ' resultado' + (matches.length!==1?'s':'');
+
+  if(matches.length===0){
+    results.innerHTML='<div class="dict-hint">No se encontró "'+q+'". Intenta otra búsqueda.</div>';
+    return;
+  }
+
+  results.innerHTML = matches.slice(0,30).map(e=>{
+    // Check if this is a verb that needs conjugation
+    const esClean = e.es.toLowerCase().replace(/^el\s+|^la\s+|^los\s+|^las\s+/, '').trim();
+    const conj = VERB_CONJUGATIONS[esClean];
+
+    let conjHtml = '';
+    if(conj){
+      conjHtml = `<div class="conj-box">
+        <div class="conj-title">📋 Conjugación — Presente</div>
+        <table class="conj-table">
+          <tr><th>Persona</th><th>Forma</th></tr>
+          ${Object.entries(conj).map(([p,c])=>`<tr><td>${p}</td><td style="font-weight:bold;">${c}</td></tr>`).join('')}
+        </table>
+      </div>`;
+    }
+
+    return `<div class="dict-entry">
+      <div class="word-header">
+        <div>
+          <span class="word">${e.es}</span>
+          <button class="speak-btn" onclick="speakWord('${e.es.replace(/'/g,"\\'")}')" title="Escuchar">🔊</button>
+        </div>
+        <span class="lesson-tag">${e.cat}</span>
+      </div>
+      <div class="translation">${e.en}</div>
+      <div class="pos-tag">${e.pos||''} · ${e.type}</div>
+      ${e.ex && e.ex.length ? `<div class="examples">${e.ex.map(x=>`<div class="ex-item"><div class="ex-es">${x.es}</div><div class="ex-en">${x.en}</div></div>`).join('')}</div>`:''}
+      ${conjHtml}
+    </div>`;
+  }).join('');
+}
+
+function speakWord(text){
+  speechSynthesis.cancel();
+  const u=new SpeechSynthesisUtterance(text);
+  u.lang='es-ES'; u.rate=0.85;
+  const voices=speechSynthesis.getVoices();
+  const v=voices.find(v=>v.lang&&v.lang.toLowerCase().startsWith('es'));
+  if(v)u.voice=v;
+  speechSynthesis.speak(u);
+}
+
+function searchOnline(){
+  const q = $('dictSearch').value.trim();
+  if(!q) return;
+  window.open('https://www.wordreference.com/es/en/translation.asp?spen=' + encodeURIComponent(q), '_blank');
+}
+
+$('dictSearch').addEventListener('input', searchDict);
+document.querySelectorAll('#dictFilters button').forEach(b=>{
+  b.onclick=()=>{
+    document.querySelectorAll('#dictFilters button').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active');
+    dictFilter=b.dataset.filter;
+    searchDict();
+  };
+});
 
 /* ---------- Lessons ---------- */
 function isLessonDone(l){
@@ -510,155 +627,6 @@ document.querySelectorAll('nav button').forEach(b=>{
     ['flash','dict','lessons','units','dele'].forEach(t=>$('tab-'+t).classList.toggle('hidden', t!==b.dataset.tab));
     if(b.dataset.tab==='units') renderUnits();
     if(b.dataset.tab==='lessons'){ backToLessons(); }
-  };
-});
-
-
-/* ---------- Dictionary ---------- */
-let dictFilter='all';
-function normalizeStr(s){
-  return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
-}
-function searchDict(){
-  const q = normalizeStr($('dictSearch').value.trim());
-  const results = $('dictResults');
-  if(!q){ results.innerHTML='<div class="dict-hint">Escribe algo para buscar...</div>'; $('dictCount').textContent=''; return; }
-
-  let matches = DICTIONARY.filter(e=>{
-    if(dictFilter!=='all' && e.type!==dictFilter) return false;
-    const es = normalizeStr(e.es);
-    const en = normalizeStr(e.en);
-    // Match: exact, starts with, contains, or word-by-word
-    return es.includes(q) || en.includes(q) || 
-           es.split(/\s+/).some(w=>w.startsWith(q)) ||
-           en.split(/\s+/).some(w=>w.startsWith(q));
-  });
-
-  // Sort: exact matches first, then starts with, then contains
-  matches.sort((a,b)=>{
-    const aEs = normalizeStr(a.es), bEs = normalizeStr(b.es);
-    const aEn = normalizeStr(a.en), bEn = normalizeStr(b.en);
-    const aExact = aEs===q || aEn===q;
-    const bExact = bEs===q || bEn===q;
-    if(aExact && !bExact) return -1;
-    if(!aExact && bExact) return 1;
-    const aStart = aEs.startsWith(q) || aEn.startsWith(q);
-    const bStart = bEs.startsWith(q) || bEn.startsWith(q);
-    if(aStart && !bStart) return -1;
-    if(!aStart && bStart) return 1;
-    return 0;
-  });
-
-  $('dictCount').textContent = matches.length + ' resultado' + (matches.length!==1?'s':'');
-
-  if(matches.length===0){
-    results.innerHTML='<div class="dict-hint">No se encontró "'+q+'". Intenta otra búsqueda.</div>';
-    return;
-  }
-
-  function searchDict(){
-  const q = normalizeStr($('dictSearch').value.trim());
-  const results = $('dictResults');
-  if(!q){ results.innerHTML='<div class="dict-hint">Escribe algo para buscar...</div>'; $('dictCount').textContent=''; return; }
-  
-  let matches = DICTIONARY.filter(e=>{
-    if(dictFilter!=='all' && e.type!==dictFilter) return false;
-    const es = normalizeStr(e.es);
-    const en = normalizeStr(e.en);
-    return es.includes(q) || en.includes(q) || 
-           es.split(/\s+/).some(w=>w.startsWith(q)) ||
-           en.split(/\s+/).some(w=>w.startsWith(q));
-  });
-  
-  matches.sort((a,b)=>{
-    const aEs = normalizeStr(a.es), bEs = normalizeStr(b.es);
-    const aEn = normalizeStr(a.en), bEn = normalizeStr(b.en);
-    const aExact = aEs===q || aEn===q;
-    const bExact = bEs===q || bEn===q;
-    if(aExact && !bExact) return -1;
-    if(!aExact && bExact) return 1;
-    const aStart = aEs.startsWith(q) || aEn.startsWith(q);
-    const bStart = bEs.startsWith(q) || bEn.startsWith(q);
-    if(aStart && !bStart) return -1;
-    if(!aStart && bStart) return 1;
-    return 0;
-  });
-  
-  $('dictCount').textContent = matches.length + ' resultado' + (matches.length!==1?'s':'');
-  
-  if(matches.length===0){
-    results.innerHTML='<div class="dict-hint">No se encontró "'+q+'". Intenta otra búsqueda.</div>';
-    return;
-  }
-  
-  results.innerHTML = matches.slice(0,30).map(e=>{
-    // Check if this is a verb that needs conjugation
-    const verbConjugations = {
-      "ser": {"Presente":{"yo":"soy","tú":"eres","él/ella/usted":"es","nosotros/as":"somos","vosotros/as":"sois","ellos/ellas/ustedes":"son"}},
-      "estar": {"Presente":{"yo":"estoy","tú":"estás","él/ella/usted":"está","nosotros/as":"estamos","vosotros/as":"estáis","ellos/ellas/ustedes":"están"}},
-      "tener": {"Presente":{"yo":"tengo","tú":"tienes","él/ella/usted":"tiene","nosotros/as":"tenemos","vosotros/as":"tenéis","ellos/ellas/ustedes":"tienen"}},
-      "ir": {"Presente":{"yo":"voy","tú":"vas","él/ella/usted":"va","nosotros/as":"vamos","vosotros/as":"vais","ellos/ellas/ustedes":"van"}},
-      "hablar": {"Presente":{"yo":"hablo","tú":"hablas","él/ella/usted":"habla","nosotros/as":"hablamos","vosotros/as":"habláis","ellos/ellas/ustedes":"hablan"}},
-      "trabajar": {"Presente":{"yo":"trabajo","tú":"trabajas","él/ella/usted":"trabaja","nosotros/as":"trabajamos","vosotros/as":"trabajáis","ellos/ellas/ustedes":"trabajan"}},
-      "estudiar": {"Presente":{"yo":"estudio","tú":"estudias","él/ella/usted":"estudia","nosotros/as":"estudiamos","vosotros/as":"estudiáis","ellos/ellas/ustedes":"estudian"}},
-      "gustar": {"Presente":{"yo":"me gusta","tú":"te gusta","él/ella/usted":"le gusta","nosotros/as":"nos gusta","vosotros/as":"os gusta","ellos/ellas/ustedes":"les gusta"}},
-      "llamarse": {"Presente":{"yo":"me llamo","tú":"te llamas","él/ella/usted":"se llama","nosotros/as":"nos llamamos","vosotros/as":"os llamáis","ellos/ellas/ustedes":"se llaman"}},
-      "apellidarse": {"Presente":{"yo":"me apellido","tú":"te apellidas","él/ella/usted":"se apellida","nosotros/as":"nos apellidamos","vosotros/as":"os apellidáis","ellos/ellas/ustedes":"se apellidan"}},
-      "entender": {"Presente":{"yo":"entiendo","tú":"entiendes","él/ella/usted":"entiende","nosotros/as":"entendemos","vosotros/as":"entendéis","ellos/ellas/ustedes":"entienden"}},
-      "poder": {"Presente":{"yo":"puedo","tú":"puedes","él/ella/usted":"puede","nosotros/as":"podemos","vosotros/as":"podéis","ellos/ellas/ustedes":"pueden"}},
-    };
-    
-    // Check if the searched word is a verb
-    const esClean = e.es.toLowerCase().replace(/^el\s+|^la\s+|^los\s+|^las\s+/, '').trim();
-    const conj = verbConjugations[esClean];
-    
-    let conjHtml = '';
-    if(conj){
-      conjHtml = `<div style="margin-top:12px; padding:12px; background:#f0e6f6; border-radius:10px;">
-        <div style="font-weight:bold; color:#7c4d99; margin-bottom:8px;">📋 Conjugación — Presente</div>
-        <table style="width:100%; border-collapse:collapse; font-size:.88rem;">
-          <tr style="background:#e8dff0;"><th style="padding:6px; text-align:left;">Persona</th><th style="padding:6px; text-align:left;">Forma</th></tr>
-          ${Object.entries(conj.Presente).map(([p,c])=>`<tr><td style="padding:6px; border-bottom:1px solid #d4c4e0;">${p}</td><td style="padding:6px; border-bottom:1px solid #d4c4e0; font-weight:bold;">${c}</td></tr>`).join('')}
-        </table>
-      </div>`;
-    }
-    
-    return `<div class="dict-entry">
-      <div class="word-header">
-        <div>
-          <span class="word">${e.es}</span>
-          <button class="speak-btn" onclick="speakWord('${e.es.replace(/'/g,"\\'")}')" title="Escuchar">🔊</button>
-        </div>
-        <span class="lesson-tag">${e.cat}</span>
-      </div>
-      <div class="translation">${e.en}</div>
-      <div class="pos-tag">${e.pos||''} · ${e.type}</div>
-      ${e.ex && e.ex.length ? `<div class="examples">${e.ex.map(x=>`<div class="ex-item"><div class="ex-es">${x.es}</div><div class="ex-en">${x.en}</div></div>`).join('')}</div>`:''}
-      ${conjHtml}
-    </div>`;
-  }).join('');
-}
-function searchOnline(){
-  const q = $('dictSearch').value.trim();
-  if(!q) return;
-  window.open('https://www.wordreference.com/es/translation.asp?tranword=' + encodeURIComponent(q), '_blank');
-}
-function speakWord(text){
-  speechSynthesis.cancel();
-  const u=new SpeechSynthesisUtterance(text);
-  u.lang='es-ES'; u.rate=0.85;
-  const voices=speechSynthesis.getVoices();
-  const v=voices.find(v=>v.lang&&v.lang.toLowerCase().startsWith('es'));
-  if(v)u.voice=v;
-  speechSynthesis.speak(u);
-}
-$('dictSearch').addEventListener('input', searchDict);
-document.querySelectorAll('#dictFilters button').forEach(b=>{
-  b.onclick=()=>{
-    document.querySelectorAll('#dictFilters button').forEach(x=>x.classList.remove('active'));
-    b.classList.add('active');
-    dictFilter=b.dataset.filter;
-    searchDict();
   };
 });
 
